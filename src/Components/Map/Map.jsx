@@ -19,9 +19,6 @@ const Map = () => {
     <StyledMapContainer>
       {" "}
       {/* Use the StyledMapContainer component */}
-      <Typography variant="h4" component="h1" gutterBottom>
-        Map
-      </Typography>
       {/* Map implementation would go here */}
       {/* For example, a marker might look like this: */}
       <GoogleMapReact
