@@ -10,10 +10,23 @@ import {
   Select,
 } from "@mui/material";
 import { StyledContainer, StyledList, StyledFormControl } from "./styles"; // import the styled components
+import PlaceDetails from '../PlaceDetails/PlaceDetails'
 
 const List = () => {
   const [type, setType] = useState("restaurants");
   const [rating, setRating] = useState("");
+
+  const places = [
+    {name: 'Cool Place'},
+    {name: 'Best beer'},
+    {name: 'Best Steak'},
+    {name: 'Cool Place'},
+    {name: 'Best beer'},
+    {name: 'Best Steak'},
+    {name: 'Cool Place'},
+    {name: 'Best beer'},
+    {name: 'Best Steak'},
+  ]
 
   return (
     <StyledContainer>
@@ -41,6 +54,11 @@ const List = () => {
           <MenuItem value="4.5">Above 4.5</MenuItem>
         </Select>
       </StyledFormControl>
+      <Grid container spacing={3}>
+        {places?.map((place, i) => (<Grid item={i} xs={12}>
+          <PlaceDetails place={place}/>
+        </Grid>))}
+      </Grid>
       <StyledList>
         {" "}
         {/* Use the StyledList component */}
