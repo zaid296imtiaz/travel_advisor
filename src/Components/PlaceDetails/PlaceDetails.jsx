@@ -39,16 +39,54 @@ const PlaceDetails = ({ place }) => {
             </Typography>
           </Box>
           <Box display="flex" justifyContent="space-between">
-            <Typography variant="subtitle1">Ranking</Typography>
-            <Typography gutterBottom variant="subtitle1">
+            <StyledSubtitle variant="subtitle1">Ranking</StyledSubtitle>
+            <StyledSubtitle gutterBottom variant="subtitle1">
               {place.ranking}
-            </Typography>
+            </StyledSubtitle>
           </Box>
           {place?.awards?.map((award) => (
-                <Box display="flex" justifyContent="space-between" alignItems="center">
-                    <img src={award.images.small} alt={award.display_name} />
-                </Box>
+            <Box
+              my={1}
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+            >
+              <img src={award.images.small} alt={award.display_name} />
+              <StyledSubtitle variant="subtitle2" color="textSecondary">
+                {" "}
+                {award.display_name}
+              </StyledSubtitle>
+            </Box>
           ))}
+          {place?.cuisine?.map(({ name }) => (
+            <StyledChip key={name} size="small" label={name} />
+          ))}
+          {place?.address && (
+            <StyledSubtitle gutterBottom variant="body2" color="textSecondary">
+              <LocationOnOutlined /> {place.address}
+            </StyledSubtitle>
+          )}
+          {place?.phone && (
+            <StyledSubtitle gutterBottom variant="body2" color="textSecondary">
+              <Phone /> {place.phone}
+            </StyledSubtitle>
+          )}
+          <CardActions>
+            <Button
+              size="small"
+              color="primary"
+              onClick={() => window.open(place.web_url, "_black")}
+            >
+              Trip Advisor
+            </Button>
+            <Button
+              size="small"
+              color="primary"
+              onClick={() => window.open(place.website, "_black")}
+            >
+              Website
+            </Button>
+          </CardActions>
         </CardContent>
       </Card>
       <StyledSubtitle>{/* Content for the subtitle */}</StyledSubtitle>
