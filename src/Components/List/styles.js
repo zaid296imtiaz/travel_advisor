@@ -21,6 +21,8 @@ export const StyledLoadingBox = styled(Box)(({ theme }) => ({
 
 export const StyledContainer = styled(Box)(({ theme }) => ({
   padding: '25px',
+  height: '100vh',
+  overflow: 'auto'
 }));
 
 export const StyledMarginBottomBox = styled(Box)({

@@ -12,21 +12,9 @@ import {
 import { StyledContainer, StyledList, StyledFormControl } from "./styles"; // import the styled components
 import PlaceDetails from '../PlaceDetails/PlaceDetails'
 
-const List = () => {
+const List = ({places}) => {
   const [type, setType] = useState("restaurants");
   const [rating, setRating] = useState("");
-
-  const places = [
-    {name: 'Cool Place'},
-    {name: 'Best beer'},
-    {name: 'Best Steak'},
-    {name: 'Cool Place'},
-    {name: 'Best beer'},
-    {name: 'Best Steak'},
-    {name: 'Cool Place'},
-    {name: 'Best beer'},
-    {name: 'Best Steak'},
-  ]
 
   return (
     <StyledContainer>
