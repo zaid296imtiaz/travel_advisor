@@ -38,6 +38,17 @@ const PlaceDetails = ({ place }) => {
               {place.price_level}
             </Typography>
           </Box>
+          <Box display="flex" justifyContent="space-between">
+            <Typography variant="subtitle1">Ranking</Typography>
+            <Typography gutterBottom variant="subtitle1">
+              {place.ranking}
+            </Typography>
+          </Box>
+          {place?.awards?.map((award) => (
+                <Box display="flex" justifyContent="space-between" alignItems="center">
+                    <img src={award.images.small} alt={award.display_name} />
+                </Box>
+          ))}
         </CardContent>
       </Card>
       <StyledSubtitle>{/* Content for the subtitle */}</StyledSubtitle>
