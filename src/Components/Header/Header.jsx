@@ -1,10 +1,23 @@
 // Header.jsx
-import React from "react";
+import React, {useState} from "react";
 import { Box } from '@mui/material';
 import { StyledAppBar, StyledToolbar, StyledTitle, StyledSearch, StyledSearchIcon, StyledInputBase } from './styles';
 import SearchIcon from '@mui/icons-material/Search';
+import { Autocomplete } from "@react-google-maps/api";
 
-const Header = () => {
+const Header = ({setCoordinates}) => {
+
+  const [autocomplete, setAutocomplete] = useState(null)
+
+  const onLoad = (autoC) => setAutocomplete(autoC)
+
+  const onPlaceChanged = () => {
+    const lat = autocomplete.getPlace().geometry.location.lat()
+    const lng = autocomplete.getPlace().geometry.location.lng()
+
+    setCoordinates({lat, lng})
+  }
+
   return (
     <StyledAppBar position="static">
       <StyledToolbar>
@@ -15,7 +28,7 @@ const Header = () => {
           <StyledTitle variant="h6">
             Explore new places
           </StyledTitle>
-          {/* <Autocomplete> */}
+          <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
           <StyledSearch>
             <StyledSearchIcon>
               <SearchIcon />
@@ -24,7 +37,7 @@ const Header = () => {
               placeholder="Search ..."
             />
           </StyledSearch>
-          {/* </Autocomplete> */}
+          </Autocomplete>
         </Box>
       </StyledToolbar>
     </StyledAppBar>
