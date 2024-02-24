@@ -9,13 +9,18 @@ import {
   CardContent,
   CardActions,
   Chip,
+  Rating,
 } from "@mui/material";
 import { StyledSubtitle, StyledSpacing, StyledChip } from "./styles"; // import the styled components
 import { LocationOnOutlined } from "@mui/icons-material";
 import { Phone } from "@mui/icons-material";
-import Rating from "@mui/material";
 
-const PlaceDetails = ({ place }) => {
+const PlaceDetails = ({ place, selected, refProp }) => {
+  if (selected){
+    console.log({selected, refProp})
+    refProp?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   return (
     <div>
       <Card elevation={6}>
@@ -32,6 +37,12 @@ const PlaceDetails = ({ place }) => {
           <Typography gutterBottom variant="h5">
             {place.name}
           </Typography>
+          <Box display="flex" justifyContent="space-between">
+            <Rating value={Number(place.rating)} readOnly />
+            <Typography gutterBottom variant="subtitle1">
+              out of {place.num_reviews} reviews
+            </Typography>
+          </Box>
           <Box display="flex" justifyContent="space-between">
             <Typography variant="subtitle1">Price</Typography>
             <Typography gutterBottom variant="subtitle1">
