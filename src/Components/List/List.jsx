@@ -17,9 +17,8 @@ import {
 } from "./styles"; // import the styled components
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
 
-const List = ({ places, childClicked, isLoading }) => {
-  const [type, setType] = useState("restaurants");
-  const [rating, setRating] = useState("");
+const List = ({ places, childClicked, isLoading, type, setType, rating, setRating }) => {
+ 
 
   const [elRefs, setElRefs] = useState([]);
 
