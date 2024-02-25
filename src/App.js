@@ -24,15 +24,17 @@ const App = () => {
   const [filteredPlaces, setFilteredPlaces] = useState([]);
 
   useEffect(() => {
-    if (bounds) {
+    if (bounds.sw && bounds.ne) {
       setIsLoading(true);
       getPlacesData(type, bounds?.sw, bounds?.ne).then((data) => {
-        setPlaces(data?.filter((place) => place?.name && place?.num_reviews > 0));
+        setPlaces(
+          data?.filter((place) => place?.name && place?.num_reviews > 0)
+        );
         setFilteredPlaces([]);
         setIsLoading(false);
       });
     }
-  }, [coordinates, bounds, type]);
+  }, [bounds, type]);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
