@@ -2,10 +2,12 @@
 # TravelAdvisor
 
 <div align="center" style="margin: 30px;">
-<img src="./public/travel.png" alt="Refine Logo"  />
+<img src="./public/travel.png" alt="screenshot"  />
 </div>
 
 Welcome to TravelAdvisor, a comprehensive web application designed to help you to discover places to eat, explore and stay at. Built with React, this project leverages modern web technologies to provide a seamless and interactive user experience.
+
+⭐ **Checkout the live demo of the application [here](https://travel-advisor-flame.vercel.app/).**
 
 ## Features
 
