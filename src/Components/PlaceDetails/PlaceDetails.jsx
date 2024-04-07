@@ -23,9 +23,9 @@ const PlaceDetails = ({ place, selected, refProp }) => {
 
   return (
     <div>
-      <Card elevation={6}>
+      <Card elevation={0} style={{borderRadius: '1rem'}}>
         <CardMedia
-          style={{ height: 350 }}
+          style={{ height: 350, borderRadius: '1rem' }}
           image={
             place.photo
               ? place.photo.images.large.url
@@ -82,10 +82,11 @@ const PlaceDetails = ({ place, selected, refProp }) => {
               <Phone /> {place.phone}
             </StyledSubtitle>
           )}
-          <CardActions>
+          <CardActions style={{justifyContent: 'flex-end', marginTop: '1rem'}}>
             <Button
               size="small"
               color="primary"
+              style={{borderRadius: '0.5rem', backgroundColor: '#ebf8fc', padding: '5px 10px'}}
               onClick={() => window.open(place.web_url, "_black")}
             >
               Trip Advisor
@@ -93,16 +94,16 @@ const PlaceDetails = ({ place, selected, refProp }) => {
             <Button
               size="small"
               color="primary"
+              style={{borderRadius: '0.5rem', backgroundColor: '#ebf3fc', padding: '5px 10px'}}
               onClick={() => window.open(place.website, "_black")}
             >
               Website
             </Button>
           </CardActions>
         </CardContent>
+        
       </Card>
-      <StyledSubtitle>{/* Content for the subtitle */}</StyledSubtitle>
-      <StyledSpacing>{/* Additional content with spacing */}</StyledSpacing>
-      <StyledChip label="Example Chip" /> {/* Example usage of StyledChip */}
+      <hr/>
     </div>
   );
 };

@@ -35,7 +35,7 @@ const List = ({ places, childClicked, isLoading, type, setType, rating, setRatin
       {" "}
       {/* Use the StyledContainer component */}
       <Typography variant="h4" component="h1" gutterBottom>
-        Restaurants, Hotels & Attractions near you
+        Restaurants & Attractions near you
       </Typography>
       {isLoading ? (
         <StyledLoadingBox>
@@ -49,7 +49,7 @@ const List = ({ places, childClicked, isLoading, type, setType, rating, setRatin
             <InputLabel>Type</InputLabel>
             <Select value={type} onChange={(e) => setType(e.target.value)}>
               <MenuItem value="restaurants">Restaurants</MenuItem>
-              <MenuItem value="hotels">Hotels</MenuItem>
+              {/* <MenuItem value="hotels">Hotels</MenuItem> */}
               <MenuItem value="attractions">Attractions</MenuItem>
             </Select>
           </StyledFormControl>
