@@ -3,6 +3,8 @@ import { styled, alpha } from '@mui/material/styles';
 import { AppBar, Toolbar, Typography, InputBase } from '@mui/material';
 export const StyledAppBar = styled(AppBar)(({ theme }) => ({
   // Add styles if needed
+  position: 'fixed',
+  zIndex: 1
 }));
 
 export const StyledToolbar = styled(Toolbar)({

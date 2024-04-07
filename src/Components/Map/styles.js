@@ -11,8 +11,9 @@ export const StyledPaper = styled(Paper)({
 });
 
 export const StyledMapContainer = styled(Box)({
-  height: '85vh',
-  width: '100%',
+  height: '100%',
+  width: '66.7%',
+  position: 'fixed'
 });
 
 export const StyledMarkerContainer = styled(Box)({

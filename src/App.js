@@ -51,13 +51,13 @@ const App = () => {
   }, [rating]);
 
   return (
-    <>
+    <div>
       <CssBaseline />
       <Header setCoordinates={setCoordinates} />
-      <Grid container spacing={3} style={{ width: "100%" }}>
-        <Grid item xs={12} md={4}>
+      <Grid container spacing={3} style={{ width: "100%", margin: '0', padding: '0' }}>
+        <Grid item xs={12} md={4} style={{marginTop: '2rem'}}>
           <List
-            places={filteredPlaces.length ? filteredPlaces : places}
+            places={filteredPlaces?.length ? filteredPlaces : places}
             childClicked={childClicked}
             isLoading={isLoading}
             type={type}
@@ -66,17 +66,17 @@ const App = () => {
             setRating={setRating}
           />
         </Grid>
-        <Grid item xs={12} md={8}>
+        <Grid item xs={12} md={8} style={{padding: '0'}}>
           <Map
             setCoordinates={setCoordinates}
             setBounds={setBounds}
             coordinates={coordinates}
-            places={filteredPlaces.length ? filteredPlaces : places}
+            places={filteredPlaces?.length ? filteredPlaces : places}
             setChildClicked={setChildClicked}
           />
         </Grid>
       </Grid>
-    </>
+    </div>
   );
 };
 
